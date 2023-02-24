@@ -1,11 +1,8 @@
-///                            PAIRING HEAP                ///
-
-
 #include <fstream>
 using namespace std;
 
-ifstream in("pairingheap.in");
-ofstream out("pairingheap.out");
+ifstream in("mergeheap.in");
+ofstream out("mergeheap.out");
 
 class PairNode
 {
@@ -75,7 +72,7 @@ public:
     {
         if(this->rad == NULL)
             this->rad = heap2.rad;
-         else if(this->rad->val < heap2.rad->val) {
+         else if(this->rad->val > heap2.rad->val) {
             if(this->rad->copilSt != NULL)
                 this->rad->copilSt->ant = heap2.rad;
 
@@ -133,7 +130,7 @@ public:
             if(pn2 != NULL){
                 temp = pn2->frateUrm;
 
-                if(pn1->val < pn2->val) {
+                if(pn1->val > pn2->val) {
                     if(rad_veche == NULL)
                         this->rad = pn1;
                       else {
@@ -190,7 +187,7 @@ public:
 
                 temp = pn1->ant;
 
-                if(pn1->val < rad_veche->val) {
+                if(pn1->val > rad_veche->val) {
                     rad_veche->frateUrm = pn1->copilSt;
                     rad_veche->ant = NULL;
 
@@ -229,6 +226,7 @@ int main()
     while(nr_op)
     {
         in>>op;
+        ///cout<<op<<"\n";
         switch(op)
         {
             case 1:
