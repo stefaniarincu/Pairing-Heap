@@ -1,5 +1,4 @@
-///                            PAIRING HEAP                ///
-
+///                            PAIRING HEAP                            ///
 
 #include <fstream>
 using namespace std;
